@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Weight Converter</title>
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333333;
+            color: white;
+        }
+
+        card{
+            height: auto;
+
+        }
+    </style>
+  
+
+
+</head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+            <h1 class="display-4 text-center">Weight Converter</h1>
+            <form>
+            <div class="form-group">
+                <input 
+                id="lbInput"
+                type="number"
+                class="form-control form-control-lg"
+                placeholder="Enter Weight in Pounds">
+            </div>
+            </form>
+            <div class="output">
+            <div class="card bg-primary mb-2">
+                <div class="card-block">
+                    <h4>Grams:</h4>
+                    <div id="gramsOutput"></div>
+                </div>
+            </div>
+            </div>
+
+            <div class="output">
+            <div class="card bg-success mb-2">
+                <div class="card-block">
+                    <h4>Ounces:</h4>
+                    <div id="ouncesOutput"></div>
+            </div>
+            </div>
+            </div>
+
+            <div class="output">
+                <div class="card bg-danger mb-2">
+                    <div class="card-block">
+                        <h4>Kilograms:</h4>
+                        <div id="kgOutput"></div>
+                </div>
+                </div>
+                </div>
+
+
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+            <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <script>
+
+$('.output').hide()
+
+$('#lbInput').on('input', function(e) {
+    $('.output').show()
+    let lbs = e.target.value;
+    let grams = lbs/0.0022046;
+    let ounces = lbs*16;
+    let kg = lbs/2.205;
+$('#gramsOutput').html(grams);
+$('#ouncesOutput').html(ounces);
+$('#kgOutput').html(kg);    
+    
+    });
+ 
+ </script>
+</body>
+</html>
